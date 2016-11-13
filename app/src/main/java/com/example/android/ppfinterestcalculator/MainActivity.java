@@ -129,6 +129,15 @@ public class MainActivity extends AppCompatActivity {
         setOnFocusChangeForDepositAmount(R.id.apr_dep, Constant.APR);
         setOnFocusChangeForDepositAmount(R.id.may_dep, Constant.MAY);
         setOnFocusChangeForDepositAmount(R.id.jun_dep, Constant.JUN);
+        setOnFocusChangeForDepositAmount(R.id.jul_dep, Constant.JUL);
+        setOnFocusChangeForDepositAmount(R.id.aug_dep, Constant.AUG);
+        setOnFocusChangeForDepositAmount(R.id.sep_dep, Constant.SEP);
+        setOnFocusChangeForDepositAmount(R.id.oct_dep, Constant.OCT);
+        setOnFocusChangeForDepositAmount(R.id.nov_dep, Constant.NOV);
+        setOnFocusChangeForDepositAmount(R.id.dec_dep, Constant.DEC);
+        setOnFocusChangeForDepositAmount(R.id.jan_dep, Constant.JAN);
+        setOnFocusChangeForDepositAmount(R.id.feb_dep, Constant.FEB);
+        setOnFocusChangeForDepositAmount(R.id.mar_dep, Constant.MAR);
     }
 
     /**
@@ -145,6 +154,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Set Total Current Balance Amount for Each Month
+     *
+     * @param depositAmount amount deposited
+     * @param month         month CONSTANT
+     */
     private void setTotalCurrentBalance(String depositAmount, String month) {
         depositAmount = depositAmount.isEmpty() ? Constant.ZERO : depositAmount;
         switch (month) {
@@ -168,6 +183,69 @@ public class MainActivity extends AppCompatActivity {
                         Integer.parseInt(mayCurrBalAmount);
                 junCurrBalAmount = String.valueOf(totalJunCurrAmount);
                 setTextView(R.id.jun_current_balance, junCurrBalAmount);
+                break;
+
+            case Constant.JUL:
+                int totalJulCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(junCurrBalAmount);
+                julCurrBalAmount = String.valueOf(totalJulCurrAmount);
+                setTextView(R.id.jul_current_balance, julCurrBalAmount);
+                break;
+
+            case Constant.AUG:
+                int totalAugCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(julCurrBalAmount);
+                augCurrBalAmount = String.valueOf(totalAugCurrAmount);
+                setTextView(R.id.aug_current_balance, augCurrBalAmount);
+                break;
+
+            case Constant.SEP:
+                int totalSepCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(augCurrBalAmount);
+                sepCurrBalAmount = String.valueOf(totalSepCurrAmount);
+                setTextView(R.id.sep_current_balance, sepCurrBalAmount);
+                break;
+
+            case Constant.OCT:
+                int totalOctCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(sepCurrBalAmount);
+                octCurrBalAmount = String.valueOf(totalOctCurrAmount);
+                setTextView(R.id.oct_current_balance, octCurrBalAmount);
+                break;
+
+            case Constant.NOV:
+                int totalNovCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(octCurrBalAmount);
+                novCurrBalAmount = String.valueOf(totalNovCurrAmount);
+                setTextView(R.id.nov_current_balance, novCurrBalAmount);
+                break;
+
+            case Constant.DEC:
+                int totalDecCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(novCurrBalAmount);
+                decCurrBalAmount = String.valueOf(totalDecCurrAmount);
+                setTextView(R.id.dec_current_balance, decCurrBalAmount);
+                break;
+
+            case Constant.JAN:
+                int totalJanCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(decCurrBalAmount);
+                janCurrBalAmount = String.valueOf(totalJanCurrAmount);
+                setTextView(R.id.jan_current_balance, janCurrBalAmount);
+                break;
+
+            case Constant.FEB:
+                int totalFebCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(janCurrBalAmount);
+                febCurrBalAmount = String.valueOf(totalFebCurrAmount);
+                setTextView(R.id.feb_current_balance, febCurrBalAmount);
+                break;
+
+            case Constant.MAR:
+                int totalMarCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(febCurrBalAmount);
+                marCurrBalAmount = String.valueOf(totalMarCurrAmount);
+                setTextView(R.id.mar_current_balance, marCurrBalAmount);
                 break;
         }
     }

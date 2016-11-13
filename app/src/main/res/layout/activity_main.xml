@@ -593,6 +593,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/jul_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -734,6 +735,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/aug_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -875,6 +877,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/sep_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1016,6 +1019,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/oct_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1157,6 +1161,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/nov_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1297,6 +1302,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/dec_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1435,6 +1441,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/jan_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1577,6 +1584,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/feb_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1719,6 +1727,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/mar_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
