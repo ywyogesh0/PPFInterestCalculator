@@ -11,6 +11,7 @@
         android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:background="#a3a3a3"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.example.admin.ppf.MainActivity">
@@ -22,26 +23,32 @@
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cacece"
+            android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="interest rate"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                    android:id="@+id/textView3" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:text="interest rate"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="current balance"
@@ -55,9 +62,10 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:background="#cacece"
                 android:layout_height="wrap_content"
-
                 android:orientation="horizontal">
+                <!--Interest Rate TextView-->
 
                 <TextView
                     android:id="@+id/interest_rate"
@@ -67,9 +75,10 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="8.1"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textColor="@android:color/holo_red_light"
+                    android:textColorHint="@android:color/holo_red_light"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/current_balance"
@@ -78,7 +87,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:hint="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -91,7 +99,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="10dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
@@ -99,17 +106,18 @@
 
             <TextView
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
-                android:gravity="center"
-                android:paddingTop="10dp"
-                android:text="april"
-                android:textAllCaps="true"
-                android:textColor="@android:color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginRight="4dp"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:text="april"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                android:id="@+id/textView2" />
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -147,9 +155,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -159,8 +167,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:inputType="number"
                     android:hint="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -178,9 +186,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -192,7 +200,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -209,20 +216,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:text="Interest Amount"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -289,9 +295,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:text="Deposit Amount"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -301,8 +307,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:inputType="number"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -320,9 +326,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -334,7 +340,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
+
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -351,20 +357,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -430,9 +435,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -443,7 +448,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -461,9 +466,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -475,7 +480,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
+
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -492,20 +497,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -545,7 +549,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
@@ -571,9 +574,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -584,7 +587,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -603,9 +605,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
+
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -616,7 +619,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -633,20 +635,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -712,9 +713,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -725,7 +726,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -744,9 +744,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
+
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -757,7 +758,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -774,20 +774,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -853,9 +852,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -866,7 +865,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -885,9 +884,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
+
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -898,7 +898,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -915,20 +914,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -994,9 +992,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1007,7 +1005,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1026,9 +1024,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1039,7 +1037,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1056,20 +1053,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -1135,9 +1131,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1148,7 +1144,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1167,9 +1162,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1180,7 +1175,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1197,20 +1191,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -1276,9 +1269,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1289,7 +1282,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1308,9 +1300,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1321,7 +1313,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1338,20 +1329,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -1414,9 +1404,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1427,7 +1417,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1446,9 +1435,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1459,7 +1448,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1476,20 +1464,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1556,9 +1543,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1569,7 +1556,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1588,9 +1574,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1601,7 +1587,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1618,20 +1603,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -1698,9 +1682,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="deposit amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Deposit Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1711,7 +1695,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1730,9 +1713,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1743,7 +1726,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1760,20 +1742,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="interest amount"
-                    android:textAllCaps="true"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:text="Interest Amount"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -1795,9 +1776,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Total Interest"
                     android:textAllCaps="true"
+                    android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1809,7 +1792,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-                    android:textAllCaps="true"
+                    android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1828,9 +1811,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
                     android:text="Total Balance"
                     android:textAllCaps="true"
+                    android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1841,8 +1826,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textStyle="bold"
                     android:text="0"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
