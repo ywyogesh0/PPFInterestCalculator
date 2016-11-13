@@ -22,6 +22,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/interest_rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -30,6 +31,7 @@
                 android:text="Interest Rate" />
 
             <EditText
+                android:id="@+id/current_balance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -46,17 +48,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="january"
                     android:layout_marginTop="9dp"
+                    android:text="january"
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/jan_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:hint="Current Balance" />
@@ -65,11 +67,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
                     android:text="february"
-                    android:layout_marginTop="9dp"
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/feb_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -78,11 +81,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
                     android:text="march"
-                    android:layout_marginTop="9dp"
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/mar_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -90,12 +94,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
                     android:text="april"
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/apr_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -103,12 +108,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
                     android:text="may"
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/may_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -116,12 +122,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
                     android:text="june"
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/jun_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -134,6 +141,7 @@
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/jul_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -146,6 +154,7 @@
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/aug_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -158,6 +167,7 @@
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/sep_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -170,6 +180,7 @@
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/oct_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -182,6 +193,7 @@
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/nov_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -194,6 +206,7 @@
                     android:textAllCaps="true" />
 
                 <EditText
+                    android:id="@+id/dec_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Current Balance" />
@@ -207,11 +220,11 @@
                 android:orientation="vertical">
 
                 <RadioButton
+                    android:id="@+id/radioButton"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:layout_marginTop="9dp"
-                    android:text="Before 5th"
-                    android:id="@+id/radioButton" />
+                    android:text="Before 5th" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -221,8 +234,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Before 5th"
-                    />
+                    android:text="Before 5th" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -232,8 +244,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Before 5th"
-                    />
+                    android:text="Before 5th" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -243,8 +254,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Before 5th"
-                    />
+                    android:text="Before 5th" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -254,8 +264,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Before 5th"
-                    />
+                    android:text="Before 5th" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -265,8 +274,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Before 5th"
-                    />
+                    android:text="Before 5th" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -276,8 +284,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Before 5th"
-                    />
+                    android:text="Before 5th" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -285,7 +292,8 @@
                     android:hint="Deposit Amount" />
 
 
-                </LinearLayout>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -293,75 +301,86 @@
                 android:orientation="vertical">
 
 
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="9dp"
-            android:text="After 5th"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="9dp"
+                    android:text="After 5th" />
+
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:hint="Interest Amount" />
+
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="After 5th"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Interest Amount" />
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="After 5th"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Interest Amount" />
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="After 5th"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Interest Amount" />
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="After 5th"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Interest Amount" />
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="After 5th"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Interest Amount" />
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="After 5th"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Interest Amount" />
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="After 5th"/>
+                    android:text="After 5th" />
+
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Interest Amount" />
 
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="After 5th" />
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Interest Amount" />
 
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="After 5th" />
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Interest Amount" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="After 5th" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Interest Amount" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="After 5th" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Interest Amount" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="After 5th" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Interest Amount" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="After 5th" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Interest Amount" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
