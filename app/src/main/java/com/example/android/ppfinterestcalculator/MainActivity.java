@@ -1,5 +1,6 @@
 package com.example.android.ppfinterestcalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,19 +10,19 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    String currentBalanceAmount = Constant.ZERO;
-    String aprCurrBalAmount = Constant.ZERO;
-    String mayCurrBalAmount = Constant.ZERO;
-    String junCurrBalAmount = Constant.ZERO;
-    String julCurrBalAmount = Constant.ZERO;
-    String augCurrBalAmount = Constant.ZERO;
-    String sepCurrBalAmount = Constant.ZERO;
-    String octCurrBalAmount = Constant.ZERO;
-    String novCurrBalAmount = Constant.ZERO;
-    String decCurrBalAmount = Constant.ZERO;
-    String janCurrBalAmount = Constant.ZERO;
-    String febCurrBalAmount = Constant.ZERO;
-    String marCurrBalAmount = Constant.ZERO;
+    int currentBalanceAmount = Constant.ZERO;
+    int aprCurrBalAmount = Constant.ZERO;
+    int mayCurrBalAmount = Constant.ZERO;
+    int junCurrBalAmount = Constant.ZERO;
+    int julCurrBalAmount = Constant.ZERO;
+    int augCurrBalAmount = Constant.ZERO;
+    int sepCurrBalAmount = Constant.ZERO;
+    int octCurrBalAmount = Constant.ZERO;
+    int novCurrBalAmount = Constant.ZERO;
+    int decCurrBalAmount = Constant.ZERO;
+    int janCurrBalAmount = Constant.ZERO;
+    int febCurrBalAmount = Constant.ZERO;
+    int marCurrBalAmount = Constant.ZERO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,40 +32,68 @@ public class MainActivity extends AppCompatActivity {
         // Set interest rate
         setTextView(R.id.interest_rate, Constant.INTEREST_RATE);
         // Set radio button default state - before 5th
-        setRadioButtonDefaultDate();
+        setRadioButtonDefaultDate(1, 12);
         // Set current balance
         setCurrentBalance();
-        // Set Current Balance for Each Month (Previous Months balance + Deposit Amount)
-        setTotalCurrentBalanceEachMonth();
+        // Set OnFocusChangeListener For Deposit Amount
+        setOnFocusChangeListenerForDepositAmount(1, 12);
     }
 
     /**
      * Set Text in TextView
      *
-     * @param id   Resource Id
-     * @param text Text to set in TextView
+     * @param id     Resource Id
+     * @param number number to set in TextView
      */
-    private void setTextView(int id, String text) {
+    private void setTextView(int id, double number) {
         TextView textView = (TextView) findViewById(id);
-        textView.setText(text);
+        textView.setText(String.valueOf(number));
     }
 
     /**
      * Initialize Radio Button Default Date - Before 5th
      */
-    private void setRadioButtonDefaultDate() {
-        setRadioButtonChecked(R.id.apr_radio_button_before, true);
-        setRadioButtonChecked(R.id.may_radio_button_before, true);
-        setRadioButtonChecked(R.id.jun_radio_button_before, true);
-        setRadioButtonChecked(R.id.jul_radio_button_before, true);
-        setRadioButtonChecked(R.id.aug_radio_button_before, true);
-        setRadioButtonChecked(R.id.sep_radio_button_before, true);
-        setRadioButtonChecked(R.id.oct_radio_button_before, true);
-        setRadioButtonChecked(R.id.nov_radio_button_before, true);
-        setRadioButtonChecked(R.id.dec_radio_button_before, true);
-        setRadioButtonChecked(R.id.jan_radio_button_before, true);
-        setRadioButtonChecked(R.id.feb_radio_button_before, true);
-        setRadioButtonChecked(R.id.mar_radio_button_before, true);
+    private void setRadioButtonDefaultDate(int startMonthId, int endMonthId) {
+        for (int i = startMonthId; i <= endMonthId; i++) {
+            setRadioButtonChecked(getResIdForRadioButtonBefore(i), true);
+        }
+    }
+
+    /**
+     * Return Resource Id for Radio Button before
+     *
+     * @param monthId constant month id
+     * @return Resource Id
+     */
+    private int getResIdForRadioButtonBefore(int monthId) {
+        switch (monthId) {
+            case Constant.APR:
+                return R.id.apr_radio_button_before;
+            case Constant.MAY:
+                return R.id.may_radio_button_before;
+            case Constant.JUN:
+                return R.id.jun_radio_button_before;
+            case Constant.JUL:
+                return R.id.jul_radio_button_before;
+            case Constant.AUG:
+                return R.id.aug_radio_button_before;
+            case Constant.SEP:
+                return R.id.sep_radio_button_before;
+            case Constant.OCT:
+                return R.id.oct_radio_button_before;
+            case Constant.NOV:
+                return R.id.nov_radio_button_before;
+            case Constant.DEC:
+                return R.id.dec_radio_button_before;
+            case Constant.JAN:
+                return R.id.jan_radio_button_before;
+            case Constant.FEB:
+                return R.id.feb_radio_button_before;
+            case Constant.MAR:
+                return R.id.mar_radio_button_before;
+            default:
+                return -1;
+        }
     }
 
     /**
@@ -91,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     // set current balance
                     setCurrentBalanceAmount(currentBalanceText.getText().toString());
                     // set current balance to each month
-                    setCurrentBalanceAmountEachMonth();
+                    setCurrentBalanceAmountEachMonth(1, 12);
                 }
             }
         });
@@ -101,55 +130,112 @@ public class MainActivity extends AppCompatActivity {
      * Set Current Balance Amount
      */
     private void setCurrentBalanceAmount(String currentBalanceText) {
-        currentBalanceAmount = currentBalanceText.isEmpty() ? Constant.ZERO : currentBalanceText;
+        currentBalanceAmount = currentBalanceText.isEmpty() ?
+                Constant.ZERO : Integer.parseInt(currentBalanceText);
     }
 
     /**
      * Set Current Balance Amount To Each Month
      */
-    private void setCurrentBalanceAmountEachMonth() {
-        setTextView(R.id.apr_current_balance, currentBalanceAmount);
-        setTextView(R.id.may_current_balance, currentBalanceAmount);
-        setTextView(R.id.jun_current_balance, currentBalanceAmount);
-        setTextView(R.id.jul_current_balance, currentBalanceAmount);
-        setTextView(R.id.aug_current_balance, currentBalanceAmount);
-        setTextView(R.id.sep_current_balance, currentBalanceAmount);
-        setTextView(R.id.oct_current_balance, currentBalanceAmount);
-        setTextView(R.id.nov_current_balance, currentBalanceAmount);
-        setTextView(R.id.dec_current_balance, currentBalanceAmount);
-        setTextView(R.id.jan_current_balance, currentBalanceAmount);
-        setTextView(R.id.feb_current_balance, currentBalanceAmount);
-        setTextView(R.id.mar_current_balance, currentBalanceAmount);
+    private void setCurrentBalanceAmountEachMonth(int startMonthId, int endMonthId) {
+        for (int i = startMonthId; i <= endMonthId; i++) {
+            setTextView(getResIdForCurrentBalance(i), currentBalanceAmount);
+        }
     }
 
     /**
-     * Set Current Balance Each Month on Focus Change (Previous Months balance + Deposit Amount).
+     * Return Resource Id for Current Balance
+     *
+     * @param monthId constant month id
+     * @return Resource Id
      */
-    private void setTotalCurrentBalanceEachMonth() {
-        setOnFocusChangeForDepositAmount(R.id.apr_dep, Constant.APR);
-        setOnFocusChangeForDepositAmount(R.id.may_dep, Constant.MAY);
-        setOnFocusChangeForDepositAmount(R.id.jun_dep, Constant.JUN);
-        setOnFocusChangeForDepositAmount(R.id.jul_dep, Constant.JUL);
-        setOnFocusChangeForDepositAmount(R.id.aug_dep, Constant.AUG);
-        setOnFocusChangeForDepositAmount(R.id.sep_dep, Constant.SEP);
-        setOnFocusChangeForDepositAmount(R.id.oct_dep, Constant.OCT);
-        setOnFocusChangeForDepositAmount(R.id.nov_dep, Constant.NOV);
-        setOnFocusChangeForDepositAmount(R.id.dec_dep, Constant.DEC);
-        setOnFocusChangeForDepositAmount(R.id.jan_dep, Constant.JAN);
-        setOnFocusChangeForDepositAmount(R.id.feb_dep, Constant.FEB);
-        setOnFocusChangeForDepositAmount(R.id.mar_dep, Constant.MAR);
+    private int getResIdForCurrentBalance(int monthId) {
+        switch (monthId) {
+            case Constant.APR:
+                return R.id.apr_current_balance;
+            case Constant.MAY:
+                return R.id.may_current_balance;
+            case Constant.JUN:
+                return R.id.jun_current_balance;
+            case Constant.JUL:
+                return R.id.jul_current_balance;
+            case Constant.AUG:
+                return R.id.aug_current_balance;
+            case Constant.SEP:
+                return R.id.sep_current_balance;
+            case Constant.OCT:
+                return R.id.oct_current_balance;
+            case Constant.NOV:
+                return R.id.nov_current_balance;
+            case Constant.DEC:
+                return R.id.dec_current_balance;
+            case Constant.JAN:
+                return R.id.jan_current_balance;
+            case Constant.FEB:
+                return R.id.feb_current_balance;
+            case Constant.MAR:
+                return R.id.mar_current_balance;
+            default:
+                return -1;
+        }
+    }
+
+    /**
+     * Set OnFocusChange For Deposit Amount.
+     */
+    private void setOnFocusChangeListenerForDepositAmount(int startMonthId, int endMonthId) {
+        for (int i = startMonthId; i <= endMonthId; i++) {
+            setOnFocusChangeForDepositAmount(getResIdForDepositAmount(i), i);
+        }
+    }
+
+    /**
+     * Return Resource Id For Deposit Amount
+     *
+     * @param monthId constant month id
+     * @return Resource Id
+     */
+    private int getResIdForDepositAmount(int monthId) {
+        switch (monthId) {
+            case Constant.APR:
+                return R.id.apr_dep;
+            case Constant.MAY:
+                return R.id.may_dep;
+            case Constant.JUN:
+                return R.id.jun_dep;
+            case Constant.JUL:
+                return R.id.jul_dep;
+            case Constant.AUG:
+                return R.id.aug_dep;
+            case Constant.SEP:
+                return R.id.sep_dep;
+            case Constant.OCT:
+                return R.id.oct_dep;
+            case Constant.NOV:
+                return R.id.nov_dep;
+            case Constant.DEC:
+                return R.id.dec_dep;
+            case Constant.JAN:
+                return R.id.jan_dep;
+            case Constant.FEB:
+                return R.id.feb_dep;
+            case Constant.MAR:
+                return R.id.mar_dep;
+            default:
+                return -1;
+        }
     }
 
     /**
      * Set OnFocusChange For Deposit Amount
      */
-    private void setOnFocusChangeForDepositAmount(final int id, final String month) {
+    private void setOnFocusChangeForDepositAmount(final int id, final int month) {
         final EditText text = (EditText) findViewById(id);
         text.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus)
-                    setTotalCurrentBalance(text.getText().toString(), month);
+                    setTotalCurrentBalanceAmount(text.getText().toString(), month);
             }
         });
     }
@@ -160,92 +246,152 @@ public class MainActivity extends AppCompatActivity {
      * @param depositAmount amount deposited
      * @param month         month CONSTANT
      */
-    private void setTotalCurrentBalance(String depositAmount, String month) {
-        depositAmount = depositAmount.isEmpty() ? Constant.ZERO : depositAmount;
+    private void setTotalCurrentBalanceAmount(String depositAmount, int month) {
+        int depositAmountValue = 0;
+        depositAmountValue = depositAmount.isEmpty() ?
+                Constant.ZERO : Integer.parseInt(depositAmount);
         switch (month) {
 
             case Constant.APR:
-                int totalAprCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(currentBalanceAmount);
-                aprCurrBalAmount = String.valueOf(totalAprCurrAmount);
-                setTextView(R.id.apr_current_balance, aprCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 1);
                 break;
 
             case Constant.MAY:
-                int totalMayCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(aprCurrBalAmount);
-                mayCurrBalAmount = String.valueOf(totalMayCurrAmount);
-                setTextView(R.id.may_current_balance, mayCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 2);
                 break;
 
             case Constant.JUN:
-                int totalJunCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(mayCurrBalAmount);
-                junCurrBalAmount = String.valueOf(totalJunCurrAmount);
-                setTextView(R.id.jun_current_balance, junCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 3);
                 break;
 
             case Constant.JUL:
-                int totalJulCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(junCurrBalAmount);
-                julCurrBalAmount = String.valueOf(totalJulCurrAmount);
-                setTextView(R.id.jul_current_balance, julCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 4);
                 break;
 
             case Constant.AUG:
-                int totalAugCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(julCurrBalAmount);
-                augCurrBalAmount = String.valueOf(totalAugCurrAmount);
-                setTextView(R.id.aug_current_balance, augCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 5);
                 break;
 
             case Constant.SEP:
-                int totalSepCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(augCurrBalAmount);
-                sepCurrBalAmount = String.valueOf(totalSepCurrAmount);
-                setTextView(R.id.sep_current_balance, sepCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 6);
                 break;
 
             case Constant.OCT:
-                int totalOctCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(sepCurrBalAmount);
-                octCurrBalAmount = String.valueOf(totalOctCurrAmount);
-                setTextView(R.id.oct_current_balance, octCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 7);
                 break;
 
             case Constant.NOV:
-                int totalNovCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(octCurrBalAmount);
-                novCurrBalAmount = String.valueOf(totalNovCurrAmount);
-                setTextView(R.id.nov_current_balance, novCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 8);
                 break;
 
             case Constant.DEC:
-                int totalDecCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(novCurrBalAmount);
-                decCurrBalAmount = String.valueOf(totalDecCurrAmount);
-                setTextView(R.id.dec_current_balance, decCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 9);
                 break;
 
             case Constant.JAN:
-                int totalJanCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(decCurrBalAmount);
-                janCurrBalAmount = String.valueOf(totalJanCurrAmount);
-                setTextView(R.id.jan_current_balance, janCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 10);
                 break;
 
             case Constant.FEB:
-                int totalFebCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(janCurrBalAmount);
-                febCurrBalAmount = String.valueOf(totalFebCurrAmount);
-                setTextView(R.id.feb_current_balance, febCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 11);
                 break;
 
             case Constant.MAR:
-                int totalMarCurrAmount = Integer.parseInt(depositAmount) +
-                        Integer.parseInt(febCurrBalAmount);
-                marCurrBalAmount = String.valueOf(totalMarCurrAmount);
-                setTextView(R.id.mar_current_balance, marCurrBalAmount);
+                setTotalCurrentBalance(depositAmountValue, 12);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * Set Total Current Balance Amount For Each Month
+     *
+     * @param depositAmountValue deposit amount value
+     * @param monthId            constant month id
+     */
+    private void setTotalCurrentBalance(int depositAmountValue, int monthId) {
+        if (monthId > 12)
+            return;
+        int totalCurrAmount = depositAmountValue + getBalanceAmountForMonth(monthId - 1);
+        setMonthlyBalanceAmount(totalCurrAmount, monthId);
+        setTextView(getResIdForCurrentBalance(monthId), getBalanceAmountForMonth(monthId));
+        // Remaining Months Current Balance Update (Recursive)
+        setTotalCurrentBalance(depositAmountValue, monthId + 1);
+    }
+
+    /**
+     * Return Balance Amount For Month
+     *
+     * @param monthId constant month id
+     * @return Balance Amount For Month
+     */
+    private int getBalanceAmountForMonth(int monthId) {
+        switch (monthId) {
+            case Constant.APR:
+                return aprCurrBalAmount;
+            case Constant.MAY:
+                return mayCurrBalAmount;
+            case Constant.JUN:
+                return janCurrBalAmount;
+            case Constant.JUL:
+                return julCurrBalAmount;
+            case Constant.AUG:
+                return augCurrBalAmount;
+            case Constant.SEP:
+                return sepCurrBalAmount;
+            case Constant.OCT:
+                return octCurrBalAmount;
+            case Constant.NOV:
+                return novCurrBalAmount;
+            case Constant.DEC:
+                return decCurrBalAmount;
+            case Constant.JAN:
+                return janCurrBalAmount;
+            case Constant.FEB:
+                return febCurrBalAmount;
+            case Constant.MAR:
+                return marCurrBalAmount;
+            case Constant.ZERO:
+                return currentBalanceAmount;
+            default:
+                return -1;
+        }
+    }
+
+    /**
+     * Set Total Monthly Balance Amount (previous month + deposit).
+     *
+     * @param totalBalanceAmount total balance amount (previous month + deposit)
+     * @param monthId            constant month id
+     */
+    private void setMonthlyBalanceAmount(int totalBalanceAmount, int monthId) {
+        switch (monthId) {
+            case Constant.APR:
+                aprCurrBalAmount = totalBalanceAmount;
+            case Constant.MAY:
+                marCurrBalAmount = totalBalanceAmount;
+            case Constant.JUN:
+                junCurrBalAmount = totalBalanceAmount;
+            case Constant.JUL:
+                julCurrBalAmount = totalBalanceAmount;
+            case Constant.AUG:
+                augCurrBalAmount = totalBalanceAmount;
+            case Constant.SEP:
+                sepCurrBalAmount = totalBalanceAmount;
+            case Constant.OCT:
+                octCurrBalAmount = totalBalanceAmount;
+            case Constant.NOV:
+                novCurrBalAmount = totalBalanceAmount;
+            case Constant.DEC:
+                decCurrBalAmount = totalBalanceAmount;
+            case Constant.JAN:
+                janCurrBalAmount = totalBalanceAmount;
+            case Constant.FEB:
+                febCurrBalAmount = totalBalanceAmount;
+            case Constant.MAR:
+                marCurrBalAmount = totalBalanceAmount;
+            default:
                 break;
         }
     }
