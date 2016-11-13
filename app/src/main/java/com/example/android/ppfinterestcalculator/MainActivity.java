@@ -1,6 +1,5 @@
 package com.example.android.ppfinterestcalculator;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -140,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
     private void setCurrentBalanceAmountEachMonth(int startMonthId, int endMonthId) {
         for (int i = startMonthId; i <= endMonthId; i++) {
             setTextView(getResIdForCurrentBalance(i), currentBalanceAmount);
+            setMonthlyBalanceAmount(currentBalanceAmount, i);
         }
     }
 
@@ -247,8 +247,7 @@ public class MainActivity extends AppCompatActivity {
      * @param month         month CONSTANT
      */
     private void setTotalCurrentBalanceAmount(String depositAmount, int month) {
-        int depositAmountValue = 0;
-        depositAmountValue = depositAmount.isEmpty() ?
+        int depositAmountValue = depositAmount.isEmpty() ?
                 Constant.ZERO : Integer.parseInt(depositAmount);
         switch (month) {
 
@@ -313,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
     private void setTotalCurrentBalance(int depositAmountValue, int monthId) {
         if (monthId > 12)
             return;
-        int totalCurrAmount = depositAmountValue + getBalanceAmountForMonth(monthId - 1);
+        int totalCurrAmount = depositAmountValue + getBalanceAmountForMonth(monthId);
         setMonthlyBalanceAmount(totalCurrAmount, monthId);
         setTextView(getResIdForCurrentBalance(monthId), getBalanceAmountForMonth(monthId));
         // Remaining Months Current Balance Update (Recursive)
@@ -369,28 +368,40 @@ public class MainActivity extends AppCompatActivity {
         switch (monthId) {
             case Constant.APR:
                 aprCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.MAY:
                 marCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.JUN:
                 junCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.JUL:
                 julCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.AUG:
                 augCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.SEP:
                 sepCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.OCT:
                 octCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.NOV:
                 novCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.DEC:
                 decCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.JAN:
                 janCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.FEB:
                 febCurrBalAmount = totalBalanceAmount;
+                break;
             case Constant.MAR:
                 marCurrBalAmount = totalBalanceAmount;
+                break;
             default:
                 break;
         }
