@@ -1,9 +1,10 @@
 package com.example.android.ppfinterestcalculator;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initInterestRate() {
-        EditText interestRate = (EditText) findViewById(R.id.interest_rate);
+        TextView interestRate = (TextView) findViewById(R.id.interest_rate);
         interestRate.setText(Constant.INTEREST_RATE);
     }
 
@@ -58,62 +59,62 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setAprCurBalance(String currentBalanceAmount) {
-        EditText aprCurBalance = (EditText) findViewById(R.id.apr_current_balance);
+        TextView aprCurBalance = (TextView) findViewById(R.id.apr_current_balance);
         aprCurBalance.setText(currentBalanceAmount);
     }
 
     private void setMayCurBalance(String currentBalanceAmount) {
-        EditText mayCurBalance = (EditText) findViewById(R.id.may_current_balance);
+        TextView mayCurBalance = (TextView) findViewById(R.id.may_current_balance);
         mayCurBalance.setText(currentBalanceAmount);
     }
 
     private void setJunCurBalance(String currentBalanceAmount) {
-        EditText junCurBalance = (EditText) findViewById(R.id.jun_current_balance);
+        TextView junCurBalance = (TextView) findViewById(R.id.jun_current_balance);
         junCurBalance.setText(currentBalanceAmount);
     }
 
     private void setJulCurBalance(String currentBalanceAmount) {
-        EditText julCurBalance = (EditText) findViewById(R.id.jul_current_balance);
+        TextView julCurBalance = (TextView) findViewById(R.id.jul_current_balance);
         julCurBalance.setText(currentBalanceAmount);
     }
 
     private void setAugCurBalance(String currentBalanceAmount) {
-        EditText augCurBalance = (EditText) findViewById(R.id.aug_current_balance);
+        TextView augCurBalance = (TextView) findViewById(R.id.aug_current_balance);
         augCurBalance.setText(currentBalanceAmount);
     }
 
     private void setSepCurBalance(String currentBalanceAmount) {
-        EditText sepCurBalance = (EditText) findViewById(R.id.sep_current_balance);
+        TextView sepCurBalance = (TextView) findViewById(R.id.sep_current_balance);
         sepCurBalance.setText(currentBalanceAmount);
     }
 
     private void setOctCurBalance(String currentBalanceAmount) {
-        EditText octCurBalance = (EditText) findViewById(R.id.oct_current_balance);
+        TextView octCurBalance = (TextView) findViewById(R.id.oct_current_balance);
         octCurBalance.setText(currentBalanceAmount);
     }
 
     private void setNovCurBalance(String currentBalanceAmount) {
-        EditText novCurBalance = (EditText) findViewById(R.id.nov_current_balance);
+        TextView novCurBalance = (TextView) findViewById(R.id.nov_current_balance);
         novCurBalance.setText(currentBalanceAmount);
     }
 
     private void setDecCurBalance(String currentBalanceAmount) {
-        EditText decCurBalance = (EditText) findViewById(R.id.dec_current_balance);
+        TextView decCurBalance = (TextView) findViewById(R.id.dec_current_balance);
         decCurBalance.setText(currentBalanceAmount);
     }
 
     private void setJanCurBalance(String currentBalanceAmount) {
-        EditText janCurBalance = (EditText) findViewById(R.id.jan_current_balance);
+        TextView janCurBalance = (TextView) findViewById(R.id.jan_current_balance);
         janCurBalance.setText(currentBalanceAmount);
     }
 
     private void setFebCurBalance(String currentBalanceAmount) {
-        EditText febCurBalance = (EditText) findViewById(R.id.feb_current_balance);
+        TextView febCurBalance = (TextView) findViewById(R.id.feb_current_balance);
         febCurBalance.setText(currentBalanceAmount);
     }
 
     private void setMarCurBalance(String currentBalanceAmount) {
-        EditText marCurBalance = (EditText) findViewById(R.id.mar_current_balance);
+        TextView marCurBalance = (TextView) findViewById(R.id.mar_current_balance);
         marCurBalance.setText(currentBalanceAmount);
     }
 }
