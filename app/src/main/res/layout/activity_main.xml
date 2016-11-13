@@ -8,10 +8,10 @@
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#a3a3a3"
         android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:background="#d2b48c"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.example.admin.ppf.MainActivity">
@@ -20,6 +20,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="2dp"
+            android:paddingTop="2dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
@@ -27,11 +31,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#cacece"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -40,20 +43,20 @@
                     android:paddingTop="10dp"
                     android:text="interest rate"
                     android:textAllCaps="true"
+                    android:textStyle="bold"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="current balance"
                     android:textAllCaps="true"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -61,8 +64,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:background="#f7d2a0"
                 android:layout_height="wrap_content"
-                android:background="#cacece"
                 android:orientation="horizontal">
                 <!--Interest Rate TextView-->
 
@@ -100,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
@@ -109,10 +113,11 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="april"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
@@ -123,7 +128,9 @@
                 android:id="@+id/apr_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -133,7 +140,7 @@
                     android:layout_weight="1"
                     android:text="before 5th"
                     android:textAllCaps="true"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"/>
 
                 <RadioButton
                     android:id="@+id/apr_radio_button_after"
@@ -142,14 +149,17 @@
                     android:layout_weight="1"
                     android:text="after 5th"
                     android:textAllCaps="true"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    />
 
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -157,6 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -173,15 +184,19 @@
                     android:hint="0"
                     android:inputType="number"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -190,16 +205,18 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="8dp"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"  />
 
                 <TextView
                     android:id="@+id/apr_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -211,7 +228,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -220,8 +240,10 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
+                    android:text="Interst Amount"
                     android:paddingLeft="20dp"
-                    android:text="Interest Amount"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="6dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -229,6 +251,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -243,6 +267,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
@@ -252,21 +277,24 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="may"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <RadioGroup
                 android:id="@+id/may_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -290,9 +318,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -300,6 +330,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -314,7 +345,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number"
-                    android:text="0"
+                    android:hint="0"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -322,9 +353,13 @@
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -333,8 +368,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -343,10 +378,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -355,7 +390,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -364,8 +402,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -373,6 +412,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
+                    android:inputType="number"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -387,6 +429,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
@@ -395,21 +438,25 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="june"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:id="@+id/textView2"
                 android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/jun_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -433,9 +480,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -443,6 +492,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -456,8 +506,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:hint="0"
                     android:inputType="number"
-                    android:text="0"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -465,9 +515,13 @@
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -476,8 +530,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -486,10 +540,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
-
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -498,7 +552,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -507,8 +564,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -516,6 +574,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -530,29 +590,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
-
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="july"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"  />
 
             <RadioGroup
-                android:id="@+id/jul_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -576,9 +637,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -586,6 +649,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -599,7 +663,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0"
+                    android:hint="0"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -607,9 +672,13 @@
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -618,17 +687,17 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
-
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"  />
 
                 <TextView
                     android:id="@+id/jul_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -640,7 +709,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -649,8 +721,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
+                    android:text="Interest Balance"
                     android:paddingLeft="20dp"
-                    android:text="Interest Amount"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -658,6 +731,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -672,6 +747,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
@@ -680,21 +756,25 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="august"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:id="@+id/textView2"
                 android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/aug_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -718,9 +798,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -728,6 +810,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -741,7 +824,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0"
+                    android:hint="0"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -749,9 +833,13 @@
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -760,8 +848,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -770,6 +858,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -781,7 +870,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -790,8 +882,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -799,6 +892,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -813,29 +908,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="september"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:id="@+id/textView2"
                 android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/sep_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -843,10 +942,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
+
 
                 <RadioButton
                     android:id="@+id/sep_radio_button_after"
@@ -860,9 +959,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -870,6 +971,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -883,8 +985,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:hint="0"
                     android:inputType="number"
-                    android:text="0"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -892,21 +994,26 @@
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:paddingLeft="20dp"
-                    android:text="Current Balance"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Current Balance"
+                android:paddingLeft="20dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/sep_current_balance"
@@ -914,8 +1021,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:text="0"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -924,7 +1032,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -933,15 +1044,19 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -956,29 +1071,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="october"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:id="@+id/textView2"
                 android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/oct_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -1002,9 +1121,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1012,6 +1133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -1026,7 +1148,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number"
-                    android:text="0"
+                    android:hint="0"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1034,9 +1156,13 @@
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1045,8 +1171,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1055,6 +1181,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1066,7 +1193,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1075,8 +1205,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1084,11 +1215,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -1098,29 +1232,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="november"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:id="@+id/textView2"
                 android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/nov_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -1144,9 +1282,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1154,6 +1294,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -1167,7 +1308,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0"
+                    android:inputType="number"
+                    android:hint="0"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1175,9 +1317,13 @@
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1186,8 +1332,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1196,6 +1342,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1207,7 +1354,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1216,20 +1366,24 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                   android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -1239,18 +1393,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
-
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="december"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
@@ -1259,19 +1413,22 @@
 
             <RadioGroup
                 android:id="@+id/dec_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
-                <RadioButton
+
+            <RadioButton
                     android:id="@+id/dec_radio_button_before"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="before 5th"
-                    android:textAllCaps="true"
-                    android:textSize="16sp" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="before 5th"
+                android:textAllCaps="true"
+                android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/dec_radio_button_after"
@@ -1285,9 +1442,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1295,6 +1454,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -1308,27 +1468,31 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0"
+                    android:hint="0"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
             </LinearLayout>
 
-
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1337,6 +1501,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1348,7 +1513,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1357,8 +1525,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1366,6 +1535,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1378,18 +1549,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
+
             <TextView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="january"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
@@ -1398,9 +1572,11 @@
 
             <RadioGroup
                 android:id="@+id/jan_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -1424,9 +1600,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1434,6 +1612,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -1447,7 +1626,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0"
+                    android:hint="0"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1455,9 +1635,14 @@
 
 
             <LinearLayout
+
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1466,8 +1651,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1476,6 +1661,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1487,7 +1673,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1496,8 +1685,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1505,6 +1695,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1521,6 +1713,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
@@ -1529,21 +1722,25 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="february"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:id="@+id/textView2"
                 android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/feb_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -1567,9 +1764,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1577,6 +1776,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -1590,7 +1790,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0"
+                    android:hint="0"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1598,9 +1799,13 @@
 
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1609,8 +1814,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1619,6 +1824,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1630,7 +1836,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1639,8 +1848,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1648,6 +1858,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1662,8 +1874,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
             android:layout_marginTop="10dp"
+            android:paddingBottom="2dp"
             android:background="@drawable/rectangle"
             android:orientation="vertical">
 
@@ -1672,21 +1884,25 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#f7d2a0"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="march"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:id="@+id/textView2"
                 android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/mar_radio_group"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -1710,9 +1926,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1720,6 +1938,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
+                    android:paddingTop="8dp"
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Deposit Amount"
@@ -1733,16 +1952,21 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0"
+                    android:hint="0"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:background="#f7d2a0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="4dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1751,8 +1975,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Current Balance"
+                    android:paddingLeft="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1761,6 +1985,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1772,7 +1997,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:paddingBottom="8dp"
+                android:background="#f7d2a0"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1781,8 +2009,9 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:paddingLeft="20dp"
                     android:text="Interest Amount"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1790,6 +2019,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="0"
@@ -1802,19 +2033,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="10dp"
             android:background="@drawable/rectangle"
             android:orientation="horizontal">
+
 
             <TextView
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
                 android:layout_weight="1"
+                android:background="#f7d2a0"
                 android:gravity="left"
+                android:paddingBottom="9dp"
                 android:paddingLeft="20dp"
+                android:paddingTop="8dp"
                 android:text="Total Interest"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
@@ -1822,16 +2058,24 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/total_interest"
+                android:id="@+id/total_balance"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
                 android:layout_weight="1"
+                android:background="#f7d2a0"
                 android:gravity="center"
                 android:text="0"
+                android:paddingBottom="9dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
 
         </LinearLayout>
 
@@ -1847,11 +2091,16 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
                 android:layout_weight="1"
+                android:background="#f7d2a0"
                 android:gravity="left"
+                android:paddingBottom="9dp"
                 android:paddingLeft="20dp"
-                android:text="Total Balance"
+                android:paddingTop="8dp"
+                android:text="Total Amount"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
@@ -1860,14 +2109,22 @@
             <TextView
                 android:id="@+id/total_balance"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
                 android:layout_weight="1"
+                android:background="#f7d2a0"
                 android:gravity="center"
                 android:text="0"
+                android:paddingBottom="9dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
 
         </LinearLayout>
 
