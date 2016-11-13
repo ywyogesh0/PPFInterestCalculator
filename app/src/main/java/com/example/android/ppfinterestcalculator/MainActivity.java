@@ -7,11 +7,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import static android.R.attr.id;
-import static android.icu.text.UnicodeSet.CASE;
-import static com.example.android.ppfinterestcalculator.Constant.JAN;
-import static java.lang.Integer.parseInt;
-
 public class MainActivity extends AppCompatActivity {
 
     String currentBalanceAmount = Constant.ZERO;

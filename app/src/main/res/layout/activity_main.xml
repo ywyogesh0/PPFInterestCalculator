@@ -73,7 +73,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="8.1"
+                    android:text="0"
                     android:textColor="@android:color/holo_red_light"
                     android:textColorHint="@android:color/holo_red_light"
                     android:textSize="20sp"
@@ -86,12 +86,13 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:hint="0"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
             </LinearLayout>
-        </LinearLayout>
 
+        </LinearLayout>
 
         <!--April-->
 
@@ -119,21 +120,23 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/apr_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/apr_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/apr_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -161,6 +164,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/apr_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -259,21 +263,23 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/may_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/may_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/may_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -301,6 +307,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/may_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -399,21 +406,23 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/jun_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/jun_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/jun_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -441,6 +450,7 @@
                     android:textSize="16sp" />
 
                 <EditText
+                    android:id="@+id/jun_dep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -539,12 +549,14 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/jul_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/jul_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -553,6 +565,7 @@
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/jul_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -599,7 +612,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/jul_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -612,6 +624,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/jul_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -677,21 +690,23 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/aug_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/aug_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/aug_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -738,7 +753,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/aug_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -746,11 +760,11 @@
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Current Balance"
-
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/aug_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -816,12 +830,14 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/sep_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/sep_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -831,6 +847,7 @@
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/sep_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -878,7 +895,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/sep_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -886,11 +902,11 @@
                     android:gravity="left"
                     android:paddingLeft="20dp"
                     android:text="Current Balance"
-
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/sep_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -956,21 +972,23 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/oct_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/oct_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/oct_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1018,7 +1036,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/oct_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1030,6 +1047,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/oct_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1095,21 +1113,23 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/nov_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/nov_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/nov_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1156,7 +1176,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/nov_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1168,6 +1187,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/nov_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1233,21 +1253,23 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/dec_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/dec_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="before 5th"
                     android:textAllCaps="true"
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/dec_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1294,8 +1316,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/dec_current_balance"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
@@ -1306,6 +1327,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/dec_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1369,12 +1391,14 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/jan_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/jan_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1383,6 +1407,7 @@
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/jan_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1429,7 +1454,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/jan_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1441,6 +1465,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/jan_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1508,12 +1533,14 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/feb_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/feb_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1522,6 +1549,7 @@
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/feb_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1568,7 +1596,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/feb_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1580,6 +1607,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/feb_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1647,12 +1675,14 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/mar_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/mar_radio_button_before"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1661,6 +1691,7 @@
                     android:textSize="16sp" />
 
                 <RadioButton
+                    android:id="@+id/mar_radio_button_after"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1699,7 +1730,6 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1707,7 +1737,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/mar_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1719,6 +1748,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/mar_current_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
@@ -1832,7 +1862,6 @@
 
         </LinearLayout>
 
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1840,6 +1869,5 @@
             android:text="Calculate PPF" />
 
     </LinearLayout>
-
 
 </ScrollView>
