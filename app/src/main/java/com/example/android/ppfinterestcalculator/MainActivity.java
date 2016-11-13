@@ -4,117 +4,176 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
+
+import static android.R.attr.id;
+import static android.icu.text.UnicodeSet.CASE;
+import static com.example.android.ppfinterestcalculator.Constant.JAN;
+import static java.lang.Integer.parseInt;
 
 public class MainActivity extends AppCompatActivity {
 
-    String currentBalanceAmount = Constant.EMPTY;
+    String currentBalanceAmount = Constant.ZERO;
+    String aprCurrBalAmount = Constant.ZERO;
+    String mayCurrBalAmount = Constant.ZERO;
+    String junCurrBalAmount = Constant.ZERO;
+    String julCurrBalAmount = Constant.ZERO;
+    String augCurrBalAmount = Constant.ZERO;
+    String sepCurrBalAmount = Constant.ZERO;
+    String octCurrBalAmount = Constant.ZERO;
+    String novCurrBalAmount = Constant.ZERO;
+    String decCurrBalAmount = Constant.ZERO;
+    String janCurrBalAmount = Constant.ZERO;
+    String febCurrBalAmount = Constant.ZERO;
+    String marCurrBalAmount = Constant.ZERO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // set interest rate
-        initInterestRate();
-        // set current balance
-        initCurrentBalance();
+        // Set interest rate
+        setTextView(R.id.interest_rate, Constant.INTEREST_RATE);
+        // Set radio button default state - before 5th
+        setRadioButtonDefaultDate();
+        // Set current balance
+        setCurrentBalance();
+        // Set Current Balance for Each Month (Previous Months balance + Deposit Amount)
+        setTotalCurrentBalanceEachMonth();
     }
 
-    private void initInterestRate() {
-        TextView interestRate = (TextView) findViewById(R.id.interest_rate);
-        interestRate.setText(Constant.INTEREST_RATE);
+    /**
+     * Set Text in TextView
+     *
+     * @param id   Resource Id
+     * @param text Text to set in TextView
+     */
+    private void setTextView(int id, String text) {
+        TextView textView = (TextView) findViewById(id);
+        textView.setText(text);
     }
 
-    private void setCurrentBalanceAmount() {
-        EditText currentBalance = (EditText) findViewById(R.id.current_balance);
-        currentBalanceAmount = currentBalance.getText().toString();
+    /**
+     * Initialize Radio Button Default Date - Before 5th
+     */
+    private void setRadioButtonDefaultDate() {
+        setRadioButtonChecked(R.id.apr_radio_button_before, true);
+        setRadioButtonChecked(R.id.may_radio_button_before, true);
+        setRadioButtonChecked(R.id.jun_radio_button_before, true);
+        setRadioButtonChecked(R.id.jul_radio_button_before, true);
+        setRadioButtonChecked(R.id.aug_radio_button_before, true);
+        setRadioButtonChecked(R.id.sep_radio_button_before, true);
+        setRadioButtonChecked(R.id.oct_radio_button_before, true);
+        setRadioButtonChecked(R.id.nov_radio_button_before, true);
+        setRadioButtonChecked(R.id.dec_radio_button_before, true);
+        setRadioButtonChecked(R.id.jan_radio_button_before, true);
+        setRadioButtonChecked(R.id.feb_radio_button_before, true);
+        setRadioButtonChecked(R.id.mar_radio_button_before, true);
     }
 
-    private void initCurrentBalance() {
-        EditText currentBalance = (EditText) findViewById(R.id.current_balance);
-        currentBalance.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+    /**
+     * Set RadioButton State - Checked/UnChecked (true/false)
+     *
+     * @param id        Resource Id
+     * @param isChecked Checked/UnChecked (true/false)
+     */
+    private void setRadioButtonChecked(int id, boolean isChecked) {
+        RadioButton radioButton = (RadioButton) findViewById(id);
+        radioButton.setChecked(isChecked);
+    }
+
+
+    /**
+     * Set Current Balance Amount
+     */
+    private void setCurrentBalance() {
+        final EditText currentBalanceText = (EditText) findViewById(R.id.current_balance);
+        currentBalanceText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     // set current balance
-                    setCurrentBalanceAmount();
-
+                    setCurrentBalanceAmount(currentBalanceText.getText().toString());
                     // set current balance to each month
-                    setAprCurBalance(currentBalanceAmount);
-                    setMayCurBalance(currentBalanceAmount);
-                    setJunCurBalance(currentBalanceAmount);
-                    setJulCurBalance(currentBalanceAmount);
-                    setAugCurBalance(currentBalanceAmount);
-                    setSepCurBalance(currentBalanceAmount);
-                    setOctCurBalance(currentBalanceAmount);
-                    setNovCurBalance(currentBalanceAmount);
-                    setDecCurBalance(currentBalanceAmount);
-                    setJanCurBalance(currentBalanceAmount);
-                    setFebCurBalance(currentBalanceAmount);
-                    setMarCurBalance(currentBalanceAmount);
+                    setCurrentBalanceAmountEachMonth();
                 }
             }
         });
     }
 
-    private void setAprCurBalance(String currentBalanceAmount) {
-        TextView aprCurBalance = (TextView) findViewById(R.id.apr_current_balance);
-        aprCurBalance.setText(currentBalanceAmount);
+    /**
+     * Set Current Balance Amount
+     */
+    private void setCurrentBalanceAmount(String currentBalanceText) {
+        currentBalanceAmount = currentBalanceText.isEmpty() ? Constant.ZERO : currentBalanceText;
     }
 
-    private void setMayCurBalance(String currentBalanceAmount) {
-        TextView mayCurBalance = (TextView) findViewById(R.id.may_current_balance);
-        mayCurBalance.setText(currentBalanceAmount);
+    /**
+     * Set Current Balance Amount To Each Month
+     */
+    private void setCurrentBalanceAmountEachMonth() {
+        setTextView(R.id.apr_current_balance, currentBalanceAmount);
+        setTextView(R.id.may_current_balance, currentBalanceAmount);
+        setTextView(R.id.jun_current_balance, currentBalanceAmount);
+        setTextView(R.id.jul_current_balance, currentBalanceAmount);
+        setTextView(R.id.aug_current_balance, currentBalanceAmount);
+        setTextView(R.id.sep_current_balance, currentBalanceAmount);
+        setTextView(R.id.oct_current_balance, currentBalanceAmount);
+        setTextView(R.id.nov_current_balance, currentBalanceAmount);
+        setTextView(R.id.dec_current_balance, currentBalanceAmount);
+        setTextView(R.id.jan_current_balance, currentBalanceAmount);
+        setTextView(R.id.feb_current_balance, currentBalanceAmount);
+        setTextView(R.id.mar_current_balance, currentBalanceAmount);
     }
 
-    private void setJunCurBalance(String currentBalanceAmount) {
-        TextView junCurBalance = (TextView) findViewById(R.id.jun_current_balance);
-        junCurBalance.setText(currentBalanceAmount);
+    /**
+     * Set Current Balance Each Month on Focus Change (Previous Months balance + Deposit Amount).
+     */
+    private void setTotalCurrentBalanceEachMonth() {
+        setOnFocusChangeForDepositAmount(R.id.apr_dep, Constant.APR);
+        setOnFocusChangeForDepositAmount(R.id.may_dep, Constant.MAY);
+        setOnFocusChangeForDepositAmount(R.id.jun_dep, Constant.JUN);
     }
 
-    private void setJulCurBalance(String currentBalanceAmount) {
-        TextView julCurBalance = (TextView) findViewById(R.id.jul_current_balance);
-        julCurBalance.setText(currentBalanceAmount);
+    /**
+     * Set OnFocusChange For Deposit Amount
+     */
+    private void setOnFocusChangeForDepositAmount(final int id, final String month) {
+        final EditText text = (EditText) findViewById(id);
+        text.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus)
+                    setTotalCurrentBalance(text.getText().toString(), month);
+            }
+        });
     }
 
-    private void setAugCurBalance(String currentBalanceAmount) {
-        TextView augCurBalance = (TextView) findViewById(R.id.aug_current_balance);
-        augCurBalance.setText(currentBalanceAmount);
-    }
+    private void setTotalCurrentBalance(String depositAmount, String month) {
+        depositAmount = depositAmount.isEmpty() ? Constant.ZERO : depositAmount;
+        switch (month) {
 
-    private void setSepCurBalance(String currentBalanceAmount) {
-        TextView sepCurBalance = (TextView) findViewById(R.id.sep_current_balance);
-        sepCurBalance.setText(currentBalanceAmount);
-    }
+            case Constant.APR:
+                int totalAprCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(currentBalanceAmount);
+                aprCurrBalAmount = String.valueOf(totalAprCurrAmount);
+                setTextView(R.id.apr_current_balance, aprCurrBalAmount);
+                break;
 
-    private void setOctCurBalance(String currentBalanceAmount) {
-        TextView octCurBalance = (TextView) findViewById(R.id.oct_current_balance);
-        octCurBalance.setText(currentBalanceAmount);
-    }
+            case Constant.MAY:
+                int totalMayCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(aprCurrBalAmount);
+                mayCurrBalAmount = String.valueOf(totalMayCurrAmount);
+                setTextView(R.id.may_current_balance, mayCurrBalAmount);
+                break;
 
-    private void setNovCurBalance(String currentBalanceAmount) {
-        TextView novCurBalance = (TextView) findViewById(R.id.nov_current_balance);
-        novCurBalance.setText(currentBalanceAmount);
-    }
-
-    private void setDecCurBalance(String currentBalanceAmount) {
-        TextView decCurBalance = (TextView) findViewById(R.id.dec_current_balance);
-        decCurBalance.setText(currentBalanceAmount);
-    }
-
-    private void setJanCurBalance(String currentBalanceAmount) {
-        TextView janCurBalance = (TextView) findViewById(R.id.jan_current_balance);
-        janCurBalance.setText(currentBalanceAmount);
-    }
-
-    private void setFebCurBalance(String currentBalanceAmount) {
-        TextView febCurBalance = (TextView) findViewById(R.id.feb_current_balance);
-        febCurBalance.setText(currentBalanceAmount);
-    }
-
-    private void setMarCurBalance(String currentBalanceAmount) {
-        TextView marCurBalance = (TextView) findViewById(R.id.mar_current_balance);
-        marCurBalance.setText(currentBalanceAmount);
+            case Constant.JUN:
+                int totalJunCurrAmount = Integer.parseInt(depositAmount) +
+                        Integer.parseInt(mayCurrBalAmount);
+                junCurrBalAmount = String.valueOf(totalJunCurrAmount);
+                setTextView(R.id.jun_current_balance, junCurrBalAmount);
+                break;
+        }
     }
 }
