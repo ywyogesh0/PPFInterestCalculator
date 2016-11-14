@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setRadioButtonDefaultDate(1, 12);
         // Set OnFocusChangeListener for EditText View
         setOnFocusChangeListener(0, 12);
-        // Set Calculate Button ClickListner
+        // Set Calculate Button ClickListener
         setCalculateButtonClickListener();
     }
 
@@ -65,12 +67,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    setTextViewAmount(month);
-                    setTotalInterestEarned();
-                    setTotalClosingAmount();
+                    if (validationMessage(text)) {
+                        setTextViewAmount(month);
+                        setTotalInterestEarned();
+                        setTotalClosingAmount();
+                    }
                 }
             }
         });
+    }
+
+    /**
+     * Set Validation Message
+     *
+     * @param editText text to be edited
+     */
+    private boolean validationMessage(EditText editText) {
+        if (editText.getId() == R.id.current_balance) {
+            return true;
+        } else if (editText.getText().toString().isEmpty() ||
+                Integer.parseInt(editText.getText().toString()) == Constant.ZERO) {
+            return true;
+        } else if (getTotalDepositAmountYearly() > 150000) {
+            editText.setError("Input Error : Amount Exceeded 150000 in Current Fiscal Year");
+            Toast.makeText(this, "Input Error : Amount Exceeded 150000 in Current Fiscal Year",
+                    Toast.LENGTH_LONG).show();
+            return false;
+        } else
+            return true;
     }
 
     /**
@@ -369,6 +393,44 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    /**
+     * Return Resource Id for Radio Group
+     *
+     * @param monthId constant month id
+     * @return Resource Id
+     */
+    private int getResIdForRadioGroup(int monthId) {
+        switch (monthId) {
+            case Constant.APR:
+                return R.id.apr_radio_group;
+            case Constant.MAY:
+                return R.id.may_radio_group;
+            case Constant.JUN:
+                return R.id.jun_radio_group;
+            case Constant.JUL:
+                return R.id.jul_radio_group;
+            case Constant.AUG:
+                return R.id.aug_radio_group;
+            case Constant.SEP:
+                return R.id.sep_radio_group;
+            case Constant.OCT:
+                return R.id.oct_radio_group;
+            case Constant.NOV:
+                return R.id.nov_radio_group;
+            case Constant.DEC:
+                return R.id.dec_radio_group;
+            case Constant.JAN:
+                return R.id.jan_radio_group;
+            case Constant.FEB:
+                return R.id.feb_radio_group;
+            case Constant.MAR:
+                return R.id.mar_radio_group;
+            default:
+                return -1;
+        }
+    }
+
     /**
      * Return Deposit Amount EditTextView Amount
      *
@@ -379,6 +441,21 @@ public class MainActivity extends AppCompatActivity {
         TextView text = (TextView) findViewById(getResIdForDepositAmountEditTextView(monthId));
         return text.getText().toString().isEmpty() ?
                 Constant.ZERO : Double.parseDouble(text.getText().toString());
+    }
+
+    /**
+     * Return Deposit Amount For Current Fiscal Year.
+     *
+     * @return Deposit Amount For Current Fiscal Year
+     */
+    private double getTotalDepositAmountYearly() {
+        double totalDepositAmount = 0;
+        for (int i = Constant.APR; i <= Constant.MAR; i++) {
+            TextView text = (TextView) findViewById(getResIdForDepositAmountEditTextView(i));
+            totalDepositAmount = totalDepositAmount + (text.getText().toString().isEmpty() ?
+                    Constant.ZERO : Double.parseDouble(text.getText().toString()));
+        }
+        return totalDepositAmount;
     }
 
     /**
@@ -455,5 +532,16 @@ public class MainActivity extends AppCompatActivity {
         TextView totalAmountTextView = (TextView) findViewById(R.id.total_amount);
         totalAmountTextView.setText(String.valueOf(getCurrentBalanceTextViewAmount(Constant.MAR) +
                 getInterestTextViewAmount(Constant.TOTAL_INTEREST_TEXTVIEW)));
+    }
+
+    /**
+     * True/False  - Before 5th Selected/After 5th Selected
+     *
+     * @param monthId constant month id
+     * @return True/False  - Before 5th Selected/After 5th Selected
+     */
+    private boolean isBefore5Selected(int monthId) {
+        RadioGroup radioGroup = (RadioGroup) findViewById(getResIdForRadioGroup(monthId));
+        return getResIdForRadioButtonBefore(monthId) == radioGroup.getCheckedRadioButtonId();
     }
 }
