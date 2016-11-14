@@ -1,4 +1,4 @@
-package com.example.android.ppfinterestcalculator;
+package com.ashishyogesh.android.ppfinterestcalculator;
 
 import org.junit.Test;
 

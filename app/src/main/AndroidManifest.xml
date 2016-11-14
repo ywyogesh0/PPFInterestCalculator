@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.ppfinterestcalculator">
+    package="com.ashishyogesh.android.ppfinterestcalculator">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.ashishyogesh.android.ppfinterestcalculator.MainActivity"
             android:windowSoftInputMode="stateHidden|adjustResize">
             and
             <intent-filter>

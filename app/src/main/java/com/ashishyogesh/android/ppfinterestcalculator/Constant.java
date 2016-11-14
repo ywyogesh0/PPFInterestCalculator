@@ -1,4 +1,4 @@
-package com.example.android.ppfinterestcalculator;
+package com.ashishyogesh.android.ppfinterestcalculator;
 
 /**
  * Created by Yogesh on 11/12/2016.

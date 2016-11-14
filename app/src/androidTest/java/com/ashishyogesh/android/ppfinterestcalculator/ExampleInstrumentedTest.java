@@ -1,4 +1,4 @@
-package com.example.android.ppfinterestcalculator;
+package com.ashishyogesh.android.ppfinterestcalculator;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

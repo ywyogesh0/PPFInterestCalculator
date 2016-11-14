@@ -1,4 +1,4 @@
-package com.example.android.ppfinterestcalculator;
+package com.ashishyogesh.android.ppfinterestcalculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
