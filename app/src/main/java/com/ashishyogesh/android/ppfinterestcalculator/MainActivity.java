@@ -2,6 +2,7 @@ package com.ashishyogesh.android.ppfinterestcalculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Set interest rate
-        setInterestTextView(Constant.INTEREST_RATE_TEXTVIEW, Constant.INTEREST_RATE_VALUE);
+        setInterestTextView(Constant.INTEREST_RATE_TEXT_VIEW, Constant.INTEREST_RATE_VALUE);
         // Set radio button default state - before 5th
         setRadioButtonDefaultDate(1, 12);
         // Set OnFocusChangeListener for EditText View
@@ -83,18 +84,26 @@ public class MainActivity extends AppCompatActivity {
      * @param editText text to be edited
      */
     private boolean validationMessage(EditText editText) {
-        if (editText.getId() == R.id.current_balance) {
-            return true;
-        } else if (editText.getText().toString().isEmpty() ||
-                Integer.parseInt(editText.getText().toString()) == Constant.ZERO) {
-            return true;
-        } else if (getTotalDepositAmountYearly() > 150000) {
-            editText.setError("Input Error : Amount Exceeded 150000 in Current Fiscal Year");
-            Toast.makeText(this, "Input Error : Amount Exceeded 150000 in Current Fiscal Year",
+        try {
+            if (editText.getId() == R.id.current_balance) {
+                return true;
+            } else if (editText.getText().toString().isEmpty() ||
+                    Integer.parseInt(editText.getText().toString()) == Constant.ZERO) {
+                return true;
+            } else if (getTotalDepositAmountYearly() > 150000) {
+                editText.setError("Input Error : Amount Exceeded 150000 in Current Fiscal Year");
+                Toast.makeText(this, "Input Error : Amount Exceeded 150000 in Current Fiscal Year",
+                        Toast.LENGTH_LONG).show();
+                return false;
+            } else
+                return true;
+        } catch (NumberFormatException nfe) {
+            Log.e("MainActivity.class", nfe.getMessage());
+            editText.setError("Input Error : Please enter valid amount");
+            Toast.makeText(this, "Input Error : Please enter valid amount",
                     Toast.LENGTH_LONG).show();
             return false;
-        } else
-            return true;
+        }
     }
 
     /**
@@ -347,9 +356,9 @@ public class MainActivity extends AppCompatActivity {
                 return R.id.feb_int;
             case Constant.MAR:
                 return R.id.mar_int;
-            case Constant.INTEREST_RATE_TEXTVIEW:
+            case Constant.INTEREST_RATE_TEXT_VIEW:
                 return R.id.interest_rate;
-            case Constant.TOTAL_INTEREST_TEXTVIEW:
+            case Constant.TOTAL_INTEREST_TEXT_VIEW:
                 return R.id.total_interest;
             default:
                 return -1;
@@ -489,7 +498,17 @@ public class MainActivity extends AppCompatActivity {
      * @return monthly interest
      */
     private double getInterestAmountMonthly(double currentBalance) {
-        return (currentBalance * Constant.INTEREST_RATE_VALUE * 1) / (12 * 100);
+        return currentBalance * Constant.INTEREST_RATE_VALUE / 1200;
+    }
+
+    /**
+     * Return round of double value up-to 2 places of decimal.
+     *
+     * @param value value going to round of
+     * @return round of value
+     */
+    private double getRoundOfValue(double value) {
+        return (double) Math.round(value * 100) / 100;
     }
 
     /**
@@ -500,7 +519,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setCurrentBalanceTextView(int monthId, double number) {
         TextView textView = (TextView) findViewById(getResIdForCurrentBalanceTextView(monthId));
-        textView.setText(String.valueOf(number));
+        textView.setText(String.valueOf(getRoundOfValue(number)));
     }
 
     /**
@@ -511,7 +530,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setInterestTextView(int monthId, double number) {
         TextView textView = (TextView) findViewById(getResIdForInterestTextView(monthId));
-        textView.setText(String.valueOf(number));
+        textView.setText(String.valueOf(getRoundOfValue(number)));
     }
 
     /**
@@ -522,7 +541,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = Constant.APR; i <= Constant.MAR; i++) {
             totalInterest = totalInterest + getInterestTextViewAmount(i);
         }
-        setInterestTextView(Constant.TOTAL_INTEREST_TEXTVIEW, totalInterest);
+        setInterestTextView(Constant.TOTAL_INTEREST_TEXT_VIEW, totalInterest);
     }
 
     /**
@@ -531,7 +550,7 @@ public class MainActivity extends AppCompatActivity {
     private void setTotalClosingAmount() {
         TextView totalAmountTextView = (TextView) findViewById(R.id.total_amount);
         totalAmountTextView.setText(String.valueOf(getCurrentBalanceTextViewAmount(Constant.MAR) +
-                getInterestTextViewAmount(Constant.TOTAL_INTEREST_TEXTVIEW)));
+                getInterestTextViewAmount(Constant.TOTAL_INTEREST_TEXT_VIEW)));
     }
 
     /**

@@ -6,8 +6,8 @@ package com.ashishyogesh.android.ppfinterestcalculator;
 
 public class Constant {
     public static final double INTEREST_RATE_VALUE = 8.10;
-    public static final int INTEREST_RATE_TEXTVIEW = -1;
-    public static final int TOTAL_INTEREST_TEXTVIEW = -2;
+    public static final int INTEREST_RATE_TEXT_VIEW = -1;
+    public static final int TOTAL_INTEREST_TEXT_VIEW = -2;
     public static final int ZERO = 0;
     public static final int APR = 1;
     public static final int MAY = 2;

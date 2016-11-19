@@ -90,6 +90,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="7"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -180,6 +181,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -344,6 +346,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -505,6 +508,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -664,6 +668,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -825,6 +830,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -986,6 +992,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1147,6 +1154,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1308,6 +1316,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1469,6 +1478,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1628,6 +1638,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1792,6 +1803,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1954,6 +1966,7 @@
                     android:gravity="center"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="6"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
