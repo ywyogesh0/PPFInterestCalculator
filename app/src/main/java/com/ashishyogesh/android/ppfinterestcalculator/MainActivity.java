@@ -2,7 +2,6 @@ package com.ashishyogesh.android.ppfinterestcalculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +9,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,21 +57,26 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setOnFocusChangeListener(int startMonthId, int endMonthId) {
         for (int i = startMonthId; i <= endMonthId; i++) {
-            setOnFocusChange(getResIdForDepositAmountEditTextView(i), i);
+            setOnFocusChange(getResIdForDepositAmountEditTextView(i));
         }
     }
 
     /**
      * Set OnFocusChange For EditText
      */
-    private void setOnFocusChange(final int id, final int month) {
+    private void setOnFocusChange(final int id) {
+        final Map<Boolean, EditText> validateMap = new HashMap<>();
         final EditText text = (EditText) findViewById(id);
         text.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-                    if (validationMessage(text)) {
-                        setTextViewAmount(month);
+                    if (!validateCurrBalText(validateMap))
+                        setAmountExceedErrorMessage(validateMap.get(Boolean.FALSE), "7500000");
+                    else if (!validateDepAmount(validateMap))
+                        setAmountExceedErrorMessage(validateMap.get(Boolean.FALSE), "150000");
+                    else {
+                        setTextViewAmount();
                         setTotalInterestEarned();
                         setTotalClosingAmount();
                     }
@@ -78,151 +85,65 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Set Validation Message
-     *
-     * @param editText text to be edited
-     */
-    private boolean validationMessage(EditText editText) {
-        try {
-            if (editText.getId() == R.id.current_balance) {
-                return true;
-            } else if (editText.getText().toString().isEmpty() ||
-                    Integer.parseInt(editText.getText().toString()) == Constant.ZERO) {
-                return true;
-            } else if (getTotalDepositAmountYearly() > 150000) {
-                editText.setError("Input Error : Amount Exceeded 150000 in Current Fiscal Year");
-                Toast.makeText(this, "Input Error : Amount Exceeded 150000 in Current Fiscal Year",
-                        Toast.LENGTH_LONG).show();
-                return false;
-            } else
-                return true;
-        } catch (NumberFormatException nfe) {
-            Log.e("MainActivity.class", nfe.getMessage());
-            editText.setError("Input Error : Please enter valid amount");
-            Toast.makeText(this, "Input Error : Please enter valid amount",
-                    Toast.LENGTH_LONG).show();
+    private boolean validateCurrBalText(Map<Boolean, EditText> validateMap) {
+        EditText currentBalanceText = (EditText) findViewById(getResIdForDepositAmountEditTextView(Constant.ZERO));
+        double currentBalanceAmount = currentBalanceText.getText().toString().isEmpty() ?
+                Constant.ZERO : Double.parseDouble(currentBalanceText.getText().toString());
+        if (currentBalanceAmount > 7500000) {
+            validateMap.put(Boolean.FALSE, currentBalanceText);
             return false;
         }
+        return true;
+    }
+
+    private boolean validateDepAmount(Map<Boolean, EditText> validateMap) {
+        double totalDepositAmount = 0;
+        for (int i = Constant.APR; i <= Constant.MAR; i++) {
+            EditText text = (EditText) findViewById(getResIdForDepositAmountEditTextView(i));
+            totalDepositAmount = totalDepositAmount + (text.getText().toString().isEmpty() ?
+                    Constant.ZERO : Double.parseDouble(text.getText().toString()));
+            if (totalDepositAmount > 150000) {
+                validateMap.put(Boolean.FALSE, text);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void setAmountExceedErrorMessage(EditText editText, String maxAmount) {
+        editText.setError("Input Error : Maximum Amount Allowed is " + maxAmount);
+        Toast.makeText(this, "Input Error : Maximum Amount Allowed is " + maxAmount,
+                Toast.LENGTH_LONG).show();
     }
 
     /**
      * Set TextView Amount For Each Month
-     *
-     * @param month month CONSTANT
      */
-    private void setTextViewAmount(int month) {
-        switch (month) {
 
-            case Constant.ZERO:
-                setCurrentBalanceTextView(Constant.APR, getCurrBalanceAmountApril());
-                setInterestTextView(Constant.APR, getInterestAmountMonthly(getCurrBalanceAmountApril()));
-
-                for (int i = Constant.MAY; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.APR:
-                setCurrentBalanceTextView(Constant.APR, getCurrBalanceAmountApril());
-                setInterestTextView(Constant.APR, getInterestAmountMonthly(getCurrBalanceAmountApril()));
-
-                for (int i = Constant.MAY; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.MAY:
-                for (int i = Constant.MAY; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.JUN:
-                for (int i = Constant.JUN; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.JUL:
-                for (int i = Constant.JUL; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.AUG:
-                for (int i = Constant.AUG; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.SEP:
-                for (int i = Constant.SEP; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.OCT:
-                for (int i = Constant.OCT; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.NOV:
-                for (int i = Constant.NOV; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.DEC:
-                for (int i = Constant.DEC; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.JAN:
-                for (int i = Constant.JAN; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.FEB:
-                for (int i = Constant.FEB; i <= Constant.MAR; i++) {
-                    setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-                    setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
-                }
-                break;
-
-            case Constant.MAR:
-                setCurrentBalanceTextView(Constant.MAR, getCurrBalanceAmountMayToMar(Constant.MAR));
-                setInterestTextView(Constant.MAR, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(Constant.MAR)));
-                break;
-
-            default:
-                break;
+    private void setTextViewAmount() {
+        setCurrentBalanceTextView(Constant.APR, getCurrBalanceAmountApril());
+        setInterestTextView(Constant.APR, getInterestAmountMonthly(getCurrBalanceAmountApril()));
+        for (int i = Constant.MAY; i <= Constant.MAR; i++) {
+            setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
+            setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
         }
     }
 
     private void setCalculateButtonClickListener() {
+        final Map<Boolean, EditText> validateMap = new HashMap<>();
         Button calcButton = (Button) findViewById(R.id.calc_button);
         calcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setCurrentBalanceTextView(Constant.MAR, getCurrBalanceAmountMayToMar(Constant.MAR));
-                setInterestTextView(Constant.MAR, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(Constant.MAR)));
-                setTotalInterestEarned();
-                setTotalClosingAmount();
+                if (!validateCurrBalText(validateMap))
+                    setAmountExceedErrorMessage(validateMap.get(Boolean.FALSE), "7500000");
+                else if (!validateDepAmount(validateMap))
+                    setAmountExceedErrorMessage(validateMap.get(Boolean.FALSE), "150000");
+                else {
+                    setTextViewAmount();
+                    setTotalInterestEarned();
+                    setTotalClosingAmount();
+                }
             }
         });
     }
@@ -446,25 +367,10 @@ public class MainActivity extends AppCompatActivity {
      * @param monthId constant month id
      * @return Deposit Amount EditTextView Amount
      */
-    private double getDepositAmountEditTextViewAmount(int monthId) {
-        TextView text = (TextView) findViewById(getResIdForDepositAmountEditTextView(monthId));
+    private double getDepositAmountEditTextViewAmount(int monthId) throws NumberFormatException {
+        EditText text = (EditText) findViewById(getResIdForDepositAmountEditTextView(monthId));
         return text.getText().toString().isEmpty() ?
                 Constant.ZERO : Double.parseDouble(text.getText().toString());
-    }
-
-    /**
-     * Return Deposit Amount For Current Fiscal Year.
-     *
-     * @return Deposit Amount For Current Fiscal Year
-     */
-    private double getTotalDepositAmountYearly() {
-        double totalDepositAmount = 0;
-        for (int i = Constant.APR; i <= Constant.MAR; i++) {
-            TextView text = (TextView) findViewById(getResIdForDepositAmountEditTextView(i));
-            totalDepositAmount = totalDepositAmount + (text.getText().toString().isEmpty() ?
-                    Constant.ZERO : Double.parseDouble(text.getText().toString()));
-        }
-        return totalDepositAmount;
     }
 
     /**
