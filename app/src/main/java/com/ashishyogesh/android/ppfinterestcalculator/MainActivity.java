@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -23,11 +24,13 @@ public class MainActivity extends AppCompatActivity {
         // Set interest rate
         setInterestTextView(Constant.INTEREST_RATE_TEXT_VIEW, Constant.INTEREST_RATE_VALUE);
         // Set radio button default state - before 5th
-        setRadioButtonDefaultDate(1, 12);
+        setRadioButtonDefaultDate(Constant.APR, Constant.MAR);
         // Set OnFocusChangeListener for EditText View
-        setOnFocusChangeListener(0, 12);
+        setOnFocusChangeListener(Constant.ZERO, Constant.MAR);
         // Set Calculate Button ClickListener
         setCalculateButtonClickListener();
+        // Set OnCheckedChangeListener for RadioButton Before 5
+        setOnCheckedChangeListenerBefore5(Constant.APR, Constant.MAR);
     }
 
     /**
@@ -121,11 +124,14 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private void setTextViewAmount() {
-        setCurrentBalanceTextView(Constant.APR, getCurrBalanceAmountApril());
-        setInterestTextView(Constant.APR, getInterestAmountMonthly(getCurrBalanceAmountApril()));
+        setCurrentBalanceTextView(Constant.APR, getCurrBalanceAmountApril(true));
+        setInterestTextView(Constant.APR,
+                getInterestAmountMonthly(getCurrBalanceAmountApril(isBefore5Selected(Constant.APR))));
         for (int i = Constant.MAY; i <= Constant.MAR; i++) {
-            setCurrentBalanceTextView(i, getCurrBalanceAmountMayToMar(i));
-            setInterestTextView(i, getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i)));
+            setCurrentBalanceTextView(i,
+                    getCurrBalanceAmountMayToMar(i, true));
+            setInterestTextView(i,
+                    getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i, isBefore5Selected(i))));
         }
     }
 
@@ -151,22 +157,27 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Return current balance from may-mar.
      *
-     * @param monthId constant month id
+     * @param monthId           constant month id
+     * @param isBefore5Selected radio button selected for before 5
      * @return current balance from may-mar
      */
-    private double getCurrBalanceAmountMayToMar(int monthId) {
-        return getCurrentBalanceTextViewAmount(monthId - 1) +
-                getDepositAmountEditTextViewAmount(monthId);
+    private double getCurrBalanceAmountMayToMar(int monthId, boolean isBefore5Selected) {
+        return isBefore5Selected ? getCurrentBalanceTextViewAmount(monthId - 1) +
+                getDepositAmountEditTextViewAmount(monthId) :
+                getCurrentBalanceTextViewAmount(monthId - 1);
     }
 
     /**
      * Return current balance of april.
      *
+     * @param isBefore5Selected radio button selected for before 5
      * @return current balance of april
      */
-    private double getCurrBalanceAmountApril() {
-        return getDepositAmountEditTextViewAmount(Constant.APR - 1) +
-                getDepositAmountEditTextViewAmount(Constant.APR);
+    private double getCurrBalanceAmountApril(boolean isBefore5Selected) {
+
+        return isBefore5Selected ? getDepositAmountEditTextViewAmount(Constant.APR - 1) +
+                getDepositAmountEditTextViewAmount(Constant.APR) :
+                getDepositAmountEditTextViewAmount(Constant.APR - 1);
     }
 
     /**
@@ -468,5 +479,40 @@ public class MainActivity extends AppCompatActivity {
     private boolean isBefore5Selected(int monthId) {
         RadioGroup radioGroup = (RadioGroup) findViewById(getResIdForRadioGroup(monthId));
         return getResIdForRadioButtonBefore(monthId) == radioGroup.getCheckedRadioButtonId();
+    }
+
+    /**
+     * Set OnCheckedChange Listener for RadioButton Before 5
+     */
+    private void setOnCheckedChangeListenerBefore5(int startMonthId, int endMonthId) {
+        for (int i = startMonthId; i <= endMonthId; i++) {
+            callOnCheckedChangeListener(i);
+        }
+    }
+
+    private void callOnCheckedChangeListener(int monthId) {
+        RadioButton radioButtonBefore5 = (RadioButton) findViewById(getResIdForRadioButtonBefore(monthId));
+        radioButtonBefore5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    setInterestTextView(Constant.APR,
+                            getInterestAmountMonthly(getCurrBalanceAmountApril(true)));
+                    for (int i = Constant.MAY; i <= Constant.MAR; i++) {
+                        setInterestTextView(i,
+                                getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i, true)));
+                    }
+                } else {
+                    setInterestTextView(Constant.APR,
+                            getInterestAmountMonthly(getCurrBalanceAmountApril(false)));
+                    for (int i = Constant.MAY; i <= Constant.MAR; i++) {
+                        setInterestTextView(i,
+                                getInterestAmountMonthly(getCurrBalanceAmountMayToMar(i, false)));
+                    }
+                }
+                setTotalInterestEarned();
+                setTotalClosingAmount();
+            }
+        });
     }
 }
