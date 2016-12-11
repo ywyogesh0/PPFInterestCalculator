@@ -17,56 +17,45 @@
         tools:context="com.ashishyogesh.admin.ppf.MainActivity">
 
         <!-- Interest Rate and Current Balance : Label -->
-        <LinearLayout
-            style="@style/InterestAndCurrentBal">
+        <LinearLayout style="@style/InterestAndCurrentBal">
 
-
-            <LinearLayout
-                style="@style/IntAndCurrBalTextFormat">
+            <LinearLayout style="@style/IntAndCurrBalTextFormat">
 
                 <TextView
-                    android:text="interest rate"
-                    style="@style/IntAndCurrBalTextViews"/>
+                    style="@style/IntAndCurrBalTextViews"
+                    android:text="interest rate" />
 
                 <TextView
-                    android:text="current balance"
-                    style="@style/IntAndCurrBalTextViews" />
-
+                    style="@style/IntAndCurrBalTextViews"
+                    android:text="current balance" />
             </LinearLayout>
 
             <!-- Interest Rate and Current Balance : Amount -->
-
-            <LinearLayout
-                style="@style/IntAndCurrBalTextFormat">
-                <!--Interest Rate TextView-->
+            <LinearLayout style="@style/IntAndCurrBalTextFormat">
 
                 <TextView
                     android:id="@+id/interest_rate"
-                    android:textColor="@android:color/holo_red_light"
-                    android:textColorHint="@android:color/holo_red_light"
+                    style="@style/IntAndCurrBalTextViews"
                     android:hint="0"
-                    style="@style/IntAndCurrBalTextViews" />
+                    android:textColor="@android:color/holo_red_light"
+                    android:textColorHint="@android:color/holo_red_light" />
 
                 <EditText
                     android:id="@+id/current_balance"
+                    style="@style/IntAndCurrBalTextViews"
                     android:hint="0"
                     android:inputType="number"
-                    android:maxLength="7"
-                    style="@style/IntAndCurrBalTextViews" />
-
+                    android:maxLength="7" />
             </LinearLayout>
-
         </LinearLayout>
 
         <!--April-->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="april"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="april" />
 
             <RadioGroup
                 android:id="@+id/apr_radio_group"
@@ -74,22 +63,21 @@
 
                 <RadioButton
                     android:id="@+id/apr_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/apr_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-               style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/apr_dep"
@@ -97,13 +85,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-               style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/apr_current_balance"
@@ -116,27 +102,24 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                     />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/apr_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
         <!--May-->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="may"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="may" />
 
             <RadioGroup
                 android:id="@+id/may_radio_group"
@@ -144,22 +127,21 @@
 
                 <RadioButton
                     android:id="@+id/may_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/may_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/may_dep"
@@ -167,13 +149,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/may_current_balance"
@@ -186,26 +166,23 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/may_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
         <!--June-->
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="june"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="june" />
 
             <RadioGroup
                 android:id="@+id/jun_radio_group"
@@ -213,22 +190,21 @@
 
                 <RadioButton
                     android:id="@+id/jun_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/jun_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/jun_dep"
@@ -236,13 +212,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/jun_current_balance"
@@ -255,26 +229,23 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/jun_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
         <!--July-->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="july"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="july" />
 
             <RadioGroup
                 android:id="@+id/jul_radio_group"
@@ -282,22 +253,21 @@
 
                 <RadioButton
                     android:id="@+id/jul_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/jul_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/jul_dep"
@@ -305,13 +275,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/jul_current_balance"
@@ -324,27 +292,24 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/jul_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
         <!--August-->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="august"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="august" />
 
             <RadioGroup
                 android:id="@+id/aug_radio_group"
@@ -352,22 +317,21 @@
 
                 <RadioButton
                     android:id="@+id/aug_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/aug_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/aug_dep"
@@ -375,13 +339,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/aug_current_balance"
@@ -394,26 +356,23 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/aug_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
         <!--September-->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="september"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="september" />
 
             <RadioGroup
                 android:id="@+id/sep_radio_group"
@@ -421,22 +380,21 @@
 
                 <RadioButton
                     android:id="@+id/sep_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/sep_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/sep_dep"
@@ -444,13 +402,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/sep_current_balance"
@@ -463,26 +419,23 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/sep_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
         <!--October-->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="october"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="october" />
 
             <RadioGroup
                 android:id="@+id/oct_radio_group"
@@ -490,22 +443,21 @@
 
                 <RadioButton
                     android:id="@+id/oct_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/oct_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/oct_dep"
@@ -513,13 +465,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/oct_current_balance"
@@ -532,27 +482,24 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/oct_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
         <!--November-->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="november"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="november" />
 
             <RadioGroup
                 android:id="@+id/nov_radio_group"
@@ -560,22 +507,21 @@
 
                 <RadioButton
                     android:id="@+id/nov_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/nov_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/nov_dep"
@@ -583,13 +529,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/nov_current_balance"
@@ -602,27 +546,24 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/nov_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
         <!--December-->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="december"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="december" />
 
             <RadioGroup
                 android:id="@+id/dec_radio_group"
@@ -630,22 +571,21 @@
 
                 <RadioButton
                     android:id="@+id/dec_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/dec_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/dec_dep"
@@ -653,13 +593,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/dec_current_balance"
@@ -672,27 +610,24 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/dec_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
         <!-- January -->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="january"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="january" />
 
             <RadioGroup
                 android:id="@+id/jan_radio_group"
@@ -700,22 +635,21 @@
 
                 <RadioButton
                     android:id="@+id/jan_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/jan_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/jan_dep"
@@ -723,13 +657,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/jan_current_balance"
@@ -742,27 +674,24 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/jan_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
         <!-- February -->
 
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="february"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="february" />
 
             <RadioGroup
                 android:id="@+id/feb_radio_group"
@@ -770,22 +699,21 @@
 
                 <RadioButton
                     android:id="@+id/feb_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/feb_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/feb_dep"
@@ -793,13 +721,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/feb_current_balance"
@@ -812,26 +738,23 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/feb_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
         <!--March-->
-        <LinearLayout
-            style="@style/LinearLayoutForMonth">
-
+        <LinearLayout style="@style/LinearLayoutForMonth">
 
             <TextView
-                android:text="march"
-                style="@style/TextViewForMonth"/>
+                style="@style/TextViewForMonth"
+                android:text="march" />
 
             <RadioGroup
                 android:id="@+id/mar_radio_group"
@@ -839,22 +762,21 @@
 
                 <RadioButton
                     android:id="@+id/mar_radio_button_before"
-                    android:text="before 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="before 5th" />
 
                 <RadioButton
                     android:id="@+id/mar_radio_button_after"
-                    android:text="after 5th"
-                    style="@style/RadioButtonForMonth"/>
+                    style="@style/RadioButtonForMonth"
+                    android:text="after 5th" />
 
             </RadioGroup>
 
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Deposit Amount"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Deposit Amount" />
 
                 <EditText
                     android:id="@+id/mar_dep"
@@ -862,13 +784,11 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                style="@style/RadioGroupForMonth">
+            <LinearLayout style="@style/RadioGroupForMonth">
 
                 <TextView
-                    android:text="Current Balance"
-                    style="@style/TextViewforDepositAmount"/>
+                    style="@style/TextViewForDepositAmount"
+                    android:text="Current Balance" />
 
                 <TextView
                     android:id="@+id/mar_current_balance"
@@ -881,21 +801,18 @@
                 android:paddingBottom="8dp">
 
                 <TextView
-                    style="@style/TextViewforDepositAmount"
+                    style="@style/TextViewForDepositAmount"
                     android:paddingBottom="6dp"
-                    android:text="Interest Amount"
-                    />
+                    android:text="Interest Amount" />
 
                 <TextView
                     android:id="@+id/mar_int"
-                    android:paddingBottom="10dp"
-                    style="@style/TextViewForCurrentBalance"/>
+                    style="@style/TextViewForCurrentBalance"
+                    android:paddingBottom="10dp" />
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-           style="@style/LinearLayoutForTotalInterest">
-
+        <LinearLayout style="@style/LinearLayoutForTotalInterest">
 
             <TextView
                 style="@style/TextViewForTotalInterest"
@@ -905,7 +822,6 @@
                 android:id="@+id/total_interest"
                 style="@style/TextViewForTotalInterestAmount" />
 
-
         </LinearLayout>
 
         <LinearLayout
@@ -913,18 +829,18 @@
             style="@style/LinearLayoutForTotalInterest">
 
             <TextView
-                android:text="Total Amount"
-                style="@style/TextViewForTotalInterest" />
+                style="@style/TextViewForTotalInterest"
+                android:text="Total Amount" />
 
             <TextView
                 android:id="@+id/total_amount"
-                style="@style/TextViewForTotalInterestAmount"/>
+                style="@style/TextViewForTotalInterestAmount" />
 
         </LinearLayout>
 
         <Button
             android:id="@+id/calc_button"
-           style="@style/ButtonToCalculateFinalCalculation" />
+            style="@style/ButtonToCalculateFinalCalculation" />
 
     </LinearLayout>
 
