@@ -21,19 +21,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set interest rate
+        setInterestTextView(Constant.INTEREST_RATE_TEXT_VIEW, Constant.INTEREST_RATE_VALUE);
+        // Set radio button default state - before 5th
+        setRadioButtonDefaultDate(Constant.APR, Constant.MAR);
         try {
-            // Set interest rate
-            setInterestTextView(Constant.INTEREST_RATE_TEXT_VIEW, Constant.INTEREST_RATE_VALUE);
-            // Set radio button default state - before 5th
-            setRadioButtonDefaultDate(Constant.APR, Constant.MAR);
             // Set OnFocusChangeListener for EditText View
             setOnFocusChangeListener(Constant.ZERO, Constant.MAR);
             // Set Calculate Button ClickListener
             setCalculateButtonClickListener();
             // Set OnCheckedChangeListener for RadioButton Before 5
             setOnCheckedChangeListenerBefore5(Constant.APR, Constant.MAR);
-        } catch (Exception exc) {
-            Toast.makeText(this, exc.getMessage(), Toast.LENGTH_LONG).show();
+        } catch (NumberFormatException nfe) {
+            Toast.makeText(this, nfe.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
